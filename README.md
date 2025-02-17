@@ -39,5 +39,12 @@ This Book Recommendation System provides personalized book recommendations based
 >> •	Add a User-Based Collaborative Filtering option.
 >> •	Improve Search Functionality with fuzzy matching.
 >> •	Deploy as a Web API or Flask/Django web app.
+
+## Deployment 🚀
+
+### Preview User Interface
+![Book Recommendation Preview](https://github.com/MwangiKinyeru/Book-Recommendation-system/blob/main/UI%20Overview.png)
+
+>> The Book Recommendation System is live and accessible via Streamlit Cloud. This app allows users to search for books by title, author, or publisher and provides personalized recommendations based on their input. With a simple and intuitive interface, users can explore book suggestions effortlessly. The deployed version ensures seamless access without the need for installation—just visit the link and start discovering new books! 🔗 [Try the app here](https://mwangikinyeru-book-recommendation-sy-book-recommendation-cjfods.streamlit.app/)
 ## Author
 ### Data Scientist Martin Waweru
