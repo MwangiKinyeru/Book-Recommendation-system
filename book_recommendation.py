@@ -12,64 +12,10 @@ nltk.download('stopwords')
 
 # Load the dataset
 book = pd.read_csv("Data/cleaned_books.csv", sep=",", on_bad_lines='skip')
-
-# Rename and drop irrelevant columns
-book.rename(columns={"language_code": "language"}, inplace=True)
-irrelevant_columns = ['bookID', 'average_rating', 'isbn', 'isbn13', '  num_pages', 'ratings_count', 'text_reviews_count', 'publication_date']
-book.drop(columns=irrelevant_columns, inplace=True)
-
 # Text Preprocessing
 stop_words = set(stopwords.words('english'))
 
-def clean_title(title):
-    title = title.lower()
-    title = re.sub(r"\([^)]*\)", "", title)
-    title = re.sub(r"[^a-zA-Z0-9\s]", "", title)
-    words = title.split()
-    words = [word for word in words if word not in stop_words]
-    return " ".join(words)
 
-def standardize_authors(authors):
-    authors = authors.split("/")[0].strip()
-    authors = re.sub(r'\s+', ' ', authors)
-    return authors.lower()
-
-def standardize_publisher(publisher):
-    publisher = publisher.strip().lower()
-    publisher = re.sub(r"\s*(inc\.|corporation|co\.|ltd\.|company|corp\.|\(.*\))\s*", "", publisher)
-    publisher = re.sub(r'\s+', ' ', publisher)
-    return publisher
-
-def clean_language(language):
-    language = language.strip().lower()
-    language_mapping = {
-        'en-us': 'en', 'en-gb': 'en', 'en-ca': 'en', 'en': 'en', 'eng': 'en',
-        'fre': 'fr', 'fra': 'fr',
-        'spa': 'es', 'esp': 'es',
-        'ger': 'de', 'deu': 'de',
-        'por': 'pt',
-        'zho': 'zh',
-        'jpn': 'ja',
-        'rus': 'ru',
-        'ita': 'it',
-        'grc': 'el',
-        'gla': 'ga',
-        'mul': 'mix',
-    }
-    return language_mapping.get(language, 'unknown')
-
-# Apply text preprocessing
-book["title"] = book["title"].apply(clean_title)
-book["authors"] = book["authors"].apply(standardize_authors)
-book["publisher"] = book["publisher"].apply(standardize_publisher)
-book["language"] = book["language"].apply(clean_language)
-
-# Combine features for TF-IDF
-book["combined_features"] = book["title"] + " " + book["authors"] + " " + book["publisher"] + " " + book["language"]
-
-# Drop duplicates and reset index
-book.drop_duplicates(inplace=True)
-book = book.reset_index(drop=True)  # Reset the index
 
 # Initialize TF-IDF Vectorizer
 tfidf = TfidfVectorizer(stop_words='english')
