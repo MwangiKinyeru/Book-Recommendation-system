@@ -11,7 +11,7 @@ import streamlit as st
 nltk.download('stopwords')
 
 # Load the dataset
-book = pd.read_csv("Data/books.csv", sep=",", on_bad_lines='skip')
+book = pd.read_csv("Data/cleaned_books", sep=",", on_bad_lines='skip')
 
 # Rename and drop irrelevant columns
 book.rename(columns={"language_code": "language"}, inplace=True)
