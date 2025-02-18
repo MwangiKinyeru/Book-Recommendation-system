@@ -43,8 +43,16 @@ This Book Recommendation System provides personalized book recommendations based
 ## Deployment 🚀
 
 ### Preview User Interface
-![Book Recommendation Preview](https://github.com/MwangiKinyeru/Book-Recommendation-system/blob/main/UI%20Overview.png)
+<p align="center">
+  <img src="https://github.com/MwangiKinyeru/Book-Recommendation-system/blob/main/UI%20Overview.png" width="45%" />
+  <img src="https://github.com/MwangiKinyeru/Book-Recommendation-system/blob/main/UI%20preview%202.png" width="45%" />
+</p>
 
->> The Book Recommendation System is live and accessible via Streamlit Cloud. This app allows users to search for books by title, author, or publisher and provides personalized recommendations based on their input. With a simple and intuitive interface, users can explore book suggestions effortlessly. The deployed version ensures seamless access without the need for installation—just visit the link and start discovering new books! 🔗 [Try the app here](https://mwangikinyeru-book-recommendation-sy-book-recommendation-cjfods.streamlit.app/)
+
+>> The Book Recommendation System is now live and accessible via Streamlit Cloud. This app allows users to search for books by title, author, or publisher and provides personalized recommendations based on their input. With a simple and intuitive interface, users can effortlessly explore book suggestions. The deployed version ensures seamless access without the need for installation—just visit the link and start discovering new books!
+
+For performance and efficiency, we used 5000 rows in the dataset. This ensures that the app remains responsive while still providing high-quality recommendations. The dataset size is balanced to deliver accurate suggestions without overwhelming the system.
+
+🔗 [Try the app here](https://mwangikinyeru-book-recommendation-sy-book-recommendation-cjfods.streamlit.app/)
 ## Author
 ### Data Scientist Martin Waweru
