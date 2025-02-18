@@ -11,7 +11,7 @@ import streamlit as st
 nltk.download('stopwords')
 
 # Load the dataset
-book = pd.read_csv(r"C:\Users\PC\Documents\After  School\Project\Book-Recommendation-system\Data\cleaned_books.csv", sep=",", on_bad_lines='skip', nrows=5000)
+book = pd.read_csv("Data\cleaned_books.csv", sep=",", on_bad_lines='skip', nrows=5000)
 # Text Preprocessing
 stop_words = set(stopwords.words('english'))
 
